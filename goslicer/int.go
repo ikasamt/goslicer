@@ -44,6 +44,12 @@ func (x IntSlice) ToString() (res StringSlice) {
 	return res
 }
 
+func (x IntSlice) Mapper(f func(int) int) (res IntSlice) {
+	for _, i := range x {
+		res = append(res, f(i))
+	}
+	return
+}
 
 func (x IntSlice) Desc() IntSlice {
 	sort.Slice(x, func(i int, j int) bool{ return x[i]>x[j] })

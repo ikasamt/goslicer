@@ -77,3 +77,10 @@ func (anythings Anythings) DistinctBy(f func(anything Anything) interface{}) (re
 	}
 	return
 }
+
+func (anythings Anythings)  Mapper(f func(anything Anything) Anything) (result Anythings) {
+	for _, a := range anythings {
+		result = append(result, f(a))
+	}
+	return
+}

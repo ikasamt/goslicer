@@ -35,7 +35,6 @@ $ zapp-jam .
 ```
 
 ```
-
 // example/city_test.go
 // 北海道
 hokkaido := cities.Where(func(x City)bool{return x.PrefectureName== `北海道`})

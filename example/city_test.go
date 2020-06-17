@@ -219,6 +219,8 @@ func TestCity(t *testing.T) {
 	log.Println("sort desc population: ",  hokkaido.SortBy(func(a City,b City)bool{return a.Population > b.Population})[0])
 	log.Println("sort asc population: ",  hokkaido.SortBy(func(a City,b City)bool{return a.Population < b.Population})[0])
 
+	log.Println("mapper : ",  hokkaido.Mapper(func(x City)City{x.Name = `a`+x.Name+`b`;return x }))
+
 }
 
 
