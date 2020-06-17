@@ -15,23 +15,20 @@ type TimeStamps struct {
 	UpdatedAt time.Time
 }
 
-
-// +jam ../clefs/base.go
+// +jam ../clefs/struct_slicer.go
 type User struct {
-	ID int
-	Age int
+	ID        int
+	Age       int
 	FirstName string
-	LastName string
-	Gender Gender
+	LastName  string
+	Gender    Gender
 	TimeStamps
 }
 
-// +jam ../clefs/base.go
+// +jam ../clefs/struct_slicer.go
 type City struct {
 	PrefectureName string
-	Name string
-	Population int
-	IsCapital bool
+	Name           string
+	Population     int
+	IsCapital      bool
 }
-
-

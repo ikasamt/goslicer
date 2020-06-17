@@ -1,4 +1,4 @@
-module goslicer
+module github.com/ikasamt/goslicer
 
 go 1.14
 
