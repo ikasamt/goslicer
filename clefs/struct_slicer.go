@@ -1,9 +1,10 @@
 package clefs
 
 import (
-	"github.com/ikasamt/goslicer/typeslicer"
 	"reflect"
 	"sort"
+
+	"github.com/ikasamt/goslicer/typeslicer"
 )
 
 type Anything struct { //generic.Type
@@ -59,8 +60,11 @@ func (anythings Anythings) SortBy(sortFunc func(Anything, Anything) bool) (resul
 		b := anythings[j]
 		return sortFunc(a, b)
 	}
-	sort.Slice(anythings, f)
-	return anythings
+
+	tmp := make(Anythings, len(anythings))
+	copy(tmp, anythings)
+	sort.Slice(tmp, f)
+	return tmp
 }
 
 // DistinctBy is ..
