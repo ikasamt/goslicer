@@ -1,0 +1,8 @@
+version: '3'
+services:
+  golang:
+    build: .
+    working_dir: /go/src/goslicer/
+    volumes:
+    - .:/go/src
+    command: sh -c "go test"

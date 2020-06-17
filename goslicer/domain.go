@@ -15,6 +15,8 @@ type TimeStamps struct {
 	UpdatedAt time.Time
 }
 
+
+// +jam ../clefs/base.go
 type User struct {
 	ID string
 	Age int
