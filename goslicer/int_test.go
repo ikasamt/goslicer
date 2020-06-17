@@ -36,6 +36,13 @@ func TestInt64(t *testing.T) {
 		t.Errorf("got %v\nwant %v", actualSlice, expectedSlice)
 	}
 
+	// Sum
+	actualSum := tmp.Sum()
+	expectedSum := int64(-167)
+	if actualSum != expectedSum{
+		t.Errorf("got %v\nwant %v", actualSum, expectedSum)
+	}
+
 }
 
 
@@ -69,6 +76,14 @@ func TestInt32(t *testing.T) {
 	if fmt.Sprintf(`%v`, actualSlice) != fmt.Sprintf(`%v`, expectedSlice) {
 		t.Errorf("got %v\nwant %v", actualSlice, expectedSlice)
 	}
+
+	// Sum
+	actualSum := tmp.Sum()
+	expectedSum := -167
+	if actualSum != expectedSum{
+		t.Errorf("got %v\nwant %v", actualSum, expectedSum)
+	}
+
 
 }
 

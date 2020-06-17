@@ -6,7 +6,6 @@ import (
 	"time"
 )
 
-
 func TestUser(t *testing.T) {
 	timestamp := TimeStamps{CreatedAt: time.Now(), UpdatedAt: time.Now()}
 	users := Users{
@@ -28,8 +27,9 @@ func TestUser(t *testing.T) {
 	log.Println(senior.Age)
 
 	teenFirstNames := teens.Select(`FirstName`)
-	log.Println(teenFirstNames.ToString())
+	log.Println(teenFirstNames.AsString())
 
 	teenFirstIDs := teens.Select(`ID`)
-	log.Println(teenFirstIDs.ToInt())
+	log.Println(teenFirstIDs.AsInt())
 }
+

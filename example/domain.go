@@ -27,17 +27,11 @@ type User struct {
 }
 
 // +jam ../clefs/base.go
-type Item struct {
-	ID int
+type City struct {
+	PrefectureName string
 	Name string
-	TimeStamps
+	Population int
+	IsCapital bool
 }
 
-// +jam ../clefs/base.go
-type Product struct {
-	ID int
-	ShortName string
-	Name string
-	ItemID int
-	TimeStamps
-}
+
