@@ -1,8 +1,12 @@
 package example
 
-import "time"
+import (
+	"time"
+)
 
 type Gender int
+
+
 
 const (
 	Man Gender = iota

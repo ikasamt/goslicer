@@ -1,4 +1,4 @@
-package goslicer
+package typeslicer
 
 import (
 	"math"

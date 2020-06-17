@@ -1,7 +1,7 @@
 package clefs
 
 import (
-	"github.com/ikasamt/goslicer/goslicer"
+	"github.com/ikasamt/goslicer/typeslicer"
 	"reflect"
 	"sort"
 )
@@ -44,7 +44,7 @@ func (anythings Anythings) CountIf(f func(anything Anything) bool) (counter int)
 }
 
 // Select is ..
-func (anythings Anythings) Select(fieldName string) (result goslicer.InterfaceSlice) {
+func (anythings Anythings) Select(fieldName string) (result typeslicer.InterfaceSlice) {
 	for _, a := range anythings {
 		i := reflect.ValueOf(a).FieldByName(fieldName).Interface()
 		result = append(result, i)
