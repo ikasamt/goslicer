@@ -1,8 +1,7 @@
 package clefs
 
 import (
-	"fmt"
-	goslicer2 "goslicer/goslicer"
+	"goslicer/goslicer"
 	"reflect"
 	"sort"
 )
@@ -10,28 +9,20 @@ import (
 
 
 
-type Anything struct {
-	Name string
-}
+type Anything struct { //generic.Type
+} //generic.Type
 type Anythings []Anything
 
-
-//Select[AREA],
-//Select[int],
-//DistinctBy,
-
 // First is ..
-func (anythings Anythings) First(f func(anything Anything) bool) (Anything, error){
-	for _, a := range anythings {
-		if f(a){
-			return a, nil
-		}
+func (anythings Anythings) First() (Anything, bool){
+	if len(anythings) == 0 {
+		return Anything{}, false
 	}
-	return Anything{}, fmt.Errorf(`Not found`)
+	return anythings[0], true
 }
 
 // Where is ..
-func (anythings Anythings) Where(f func(anything Anything) bool) (result Anythings){
+func (anythings Anythings) Where(f func(anything Anything)bool) (result Anythings){
 	for _, a := range anythings {
 		if f(a){
 			result = append(result, a)
@@ -46,7 +37,7 @@ func (anythings Anythings) Count() (counter int) {
 }
 
 // CountIf is ..
-func (anythings Anythings) CountIf(f func(anything Anything) bool) (counter int) {
+func (anythings Anythings) CountIf(f func(anything Anything)bool) (counter int) {
 	for _, a := range anythings {
 		if f(a){
 			counter++
@@ -56,7 +47,7 @@ func (anythings Anythings) CountIf(f func(anything Anything) bool) (counter int)
 }
 
 // Select is ..
-func (anythings Anythings) Select(fieldName string) (result goslicer2.InterfaceSlice) {
+func (anythings Anythings) Select(fieldName string) (result goslicer.InterfaceSlice) {
 	for _, a := range anythings {
 		i := reflect.ValueOf(a).FieldByName(fieldName).Interface()
 		result = append(result, i)
@@ -65,8 +56,13 @@ func (anythings Anythings) Select(fieldName string) (result goslicer2.InterfaceS
 }
 
 // SortBy is ..
-func (anythings Anythings) SortBy(sortFunc func(int, int) bool) (result Anythings) {
-	sort.Slice(anythings, sortFunc)
+func (anythings Anythings) SortBy(sortFunc func(Anything, Anything) bool) (result Anythings) {
+	f := func(i ,j int) bool{
+		a := anythings[i]
+		b := anythings[j]
+		return sortFunc(a, b)
+	}
+	sort.Slice(anythings, f)
 	return anythings
 }
 

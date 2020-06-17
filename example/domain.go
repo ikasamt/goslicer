@@ -1,4 +1,4 @@
-package goslicer
+package example
 
 import "time"
 
@@ -18,7 +18,7 @@ type TimeStamps struct {
 
 // +jam ../clefs/base.go
 type User struct {
-	ID string
+	ID int
 	Age int
 	FirstName string
 	LastName string
@@ -26,14 +26,16 @@ type User struct {
 	TimeStamps
 }
 
+// +jam ../clefs/base.go
 type Item struct {
-	ID string
+	ID int
 	Name string
 	TimeStamps
 }
 
+// +jam ../clefs/base.go
 type Product struct {
-	ID string
+	ID int
 	ShortName string
 	Name string
 	ItemID int

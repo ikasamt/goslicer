@@ -1,13 +1,12 @@
-package goslicer_test
+package goslicer
 
 import (
 	"fmt"
-	"goslicer/goslicer"
 	"testing"
 )
 
 func TestInt64(t *testing.T) {
-	tmp := goslicer.Int64Slice{1,2,3,4,5,6,11,-199}
+	tmp := Int64Slice{1,2,3,4,5,6,11,-199}
 
 	// Max
 	actual :=  tmp.Max()
@@ -25,14 +24,14 @@ func TestInt64(t *testing.T) {
 
 	// Asc
 	actualSlice := tmp.Asc()
-	expectedSlice := goslicer.Int64Slice{-199, 1,2,3,4,5,6,11}
+	expectedSlice := Int64Slice{-199, 1,2,3,4,5,6,11}
 	if fmt.Sprintf(`%v`, actualSlice) != fmt.Sprintf(`%v`, expectedSlice) {
 		t.Errorf("got %v\nwant %v", actualSlice, expectedSlice)
 	}
 
 	// Desc
 	actualSlice = tmp.Desc()
-	expectedSlice = goslicer.Int64Slice{11,6,5,4,3,2,1,-199}
+	expectedSlice = Int64Slice{11,6,5,4,3,2,1,-199}
 	if fmt.Sprintf(`%v`, actualSlice) != fmt.Sprintf(`%v`, expectedSlice) {
 		t.Errorf("got %v\nwant %v", actualSlice, expectedSlice)
 	}
@@ -41,7 +40,7 @@ func TestInt64(t *testing.T) {
 
 
 func TestInt32(t *testing.T) {
-	tmp := goslicer.IntSlice{1,2,3,4,5,6,11,-199}
+	tmp := IntSlice{1,2,3,4,5,6,11,-199}
 
 	// Max
 	actual :=  tmp.Max()
@@ -59,14 +58,14 @@ func TestInt32(t *testing.T) {
 
 	// Asc
 	actualSlice := tmp.Asc()
-	expectedSlice := goslicer.IntSlice{-199, 1,2,3,4,5,6,11}
+	expectedSlice := IntSlice{-199, 1,2,3,4,5,6,11}
 	if fmt.Sprintf(`%v`, actualSlice) != fmt.Sprintf(`%v`, expectedSlice) {
 		t.Errorf("got %v\nwant %v", actualSlice, expectedSlice)
 	}
 
 	// Desc
 	actualSlice = tmp.Desc()
-	expectedSlice = goslicer.IntSlice{11,6,5,4,3,2,1,-199}
+	expectedSlice = IntSlice{11,6,5,4,3,2,1,-199}
 	if fmt.Sprintf(`%v`, actualSlice) != fmt.Sprintf(`%v`, expectedSlice) {
 		t.Errorf("got %v\nwant %v", actualSlice, expectedSlice)
 	}

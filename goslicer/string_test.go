@@ -1,12 +1,11 @@
-package goslicer_test
+package goslicer
 
 import (
-	"goslicer/goslicer"
 	"testing"
 )
 
 func TestContains(t *testing.T) {
-	tmp := goslicer.StringSlice{`a`, `d`,`c`, `b`, `1`}
+	tmp := StringSlice{`a`, `d`,`c`, `b`, `1`}
 
 	// 含まれない
 	actual :=  tmp.Contains(`x`)

@@ -5,4 +5,4 @@ services:
     working_dir: /go/src/goslicer/
     volumes:
     - .:/go/src
-    command: sh -c "go test"
+    command: sh -c "zapp-jam"
