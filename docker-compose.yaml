@@ -2,7 +2,7 @@ version: '3'
 services:
   golang:
     build: .
-    working_dir: /go/src/goslicer/
+    working_dir: /go/src/
     volumes:
     - .:/go/src
     command: sh -c "zapp-jam"

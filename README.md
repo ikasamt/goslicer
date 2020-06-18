@@ -4,10 +4,10 @@
 $ go get github.com/ikasamt/goslicer
 ```
 
-
 ### Dependencies
 
 ```
+$ docker-compose build --no-cache
 $ go get github.com/cheekybits/genny
 $ go get github.com/ikasamt/zapp-jam
 ```
