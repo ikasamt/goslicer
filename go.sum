@@ -1,5 +1,7 @@
 github.com/cheekybits/genny v1.0.0 h1:uGGa4nei+j20rOSeDeP5Of12XVm7TGUd4dJA9RDitfE=
 github.com/cheekybits/genny v1.0.0/go.mod h1:+tQajlRqAUrPI7DOSpB0XAqZYtQakVtB7wXkRAgjxjQ=
+github.com/google/go-cmp v0.4.1 h1:/exdXoGamhu5ONeUJH0deniYLWYvQwW66yvlfiiKTu0=
+github.com/google/go-cmp v0.4.1/go.mod h1:v8dTdLbMG2kIc/vJvl+f65V22dbkXbowE6jgT/gNBxE=
 github.com/ikasamt/zapp-jam v0.0.0-20200530014001-21e8d66e9c8e h1:NLfEnywjv7wlgVyR46QsSdo13GWRyXUddbaI5IfqFtE=
 github.com/ikasamt/zapp-jam v0.0.0-20200530014001-21e8d66e9c8e/go.mod h1:K6kYzIfYjBW81ZwHskXY3wwcujNUihR5XZmnpR5NUYs=
 github.com/yuin/goldmark v1.1.27/go.mod h1:3hX8gzYuyVAZsxl0MRgGTJEmQBFcNTphYh9decYSb74=

@@ -3,6 +3,8 @@ package typeslicer
 import (
 	"fmt"
 	"testing"
+
+	"github.com/google/go-cmp/cmp"
 )
 
 func TestInt64(t *testing.T) {
@@ -25,15 +27,15 @@ func TestInt64(t *testing.T) {
 	// Asc
 	actualSlice := tmp.Asc()
 	expectedSlice := Int64Slice{-199, 1,2,3,4,5,6,11}
-	if fmt.Sprintf(`%v`, actualSlice) != fmt.Sprintf(`%v`, expectedSlice) {
-		t.Errorf("got %v\nwant %v", actualSlice, expectedSlice)
+	if diff :=cmp.Diff(actualSlice, expectedSlice); diff != "" {
+		fmt.Printf("got != want\n%s\n", diff)
 	}
 
 	// Desc
 	actualSlice = tmp.Desc()
 	expectedSlice = Int64Slice{11,6,5,4,3,2,1,-199}
-	if fmt.Sprintf(`%v`, actualSlice) != fmt.Sprintf(`%v`, expectedSlice) {
-		t.Errorf("got %v\nwant %v", actualSlice, expectedSlice)
+	if diff :=cmp.Diff(actualSlice, expectedSlice); diff != "" {
+		fmt.Printf("got != want\n%s\n", diff)
 	}
 
 	// Sum
@@ -66,15 +68,15 @@ func TestInt32(t *testing.T) {
 	// Asc
 	actualSlice := tmp.Asc()
 	expectedSlice := IntSlice{-199, 1,2,3,4,5,6,11}
-	if fmt.Sprintf(`%v`, actualSlice) != fmt.Sprintf(`%v`, expectedSlice) {
-		t.Errorf("got %v\nwant %v", actualSlice, expectedSlice)
+	if diff :=cmp.Diff(actualSlice, expectedSlice); diff != "" {
+		fmt.Printf("got != want\n%s\n", diff)
 	}
 
 	// Desc
 	actualSlice = tmp.Desc()
 	expectedSlice = IntSlice{11,6,5,4,3,2,1,-199}
-	if fmt.Sprintf(`%v`, actualSlice) != fmt.Sprintf(`%v`, expectedSlice) {
-		t.Errorf("got %v\nwant %v", actualSlice, expectedSlice)
+	if diff :=cmp.Diff(actualSlice, expectedSlice); diff != "" {
+		fmt.Printf("got != want\n%s\n", diff)
 	}
 
 	// Sum

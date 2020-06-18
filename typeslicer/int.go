@@ -9,12 +9,34 @@ import (
 // Int
 type IntSlice []int
 
-func (x IntSlice) MinMax(dummyValue int, compareF func(int, int) bool) (res int) {
-	res = dummyValue
-	for _, i32 := range x {
-		isOK := compareF(res, i32)
+func (x IntSlice) Any(f func(int,int)bool, n int) (found bool){
+	for _, i := range x{
+		if f(i, n) {
+			return true
+		}
+	}
+	return false
+}
+
+func (x IntSlice) Where(f func(int)bool) (res IntSlice){
+	for _, i := range x{
+		if  f(i) {
+			res = append(res, i)
+		}
+	}
+	return
+}
+
+func (x IntSlice) Find(n int) (found bool){
+	return x.Any(func(a int, b int)bool{return a == b }, n)
+}
+
+func (x IntSlice) MinMax(defaultValue int, compareF func(int, int) bool) (res int) {
+	res = defaultValue
+	for _, i := range x {
+		isOK := compareF(res, i)
 		if isOK {
-			res = i32
+			res = i
 		}
 	}
 	return
@@ -60,3 +82,4 @@ func (x IntSlice) Asc() IntSlice{
 	sort.Slice(x, func(i int, j int) bool{ return x[i] < x[j] })
 	return x
 }
+
