@@ -3,7 +3,7 @@ package typeslicer
 // Interface
 type InterfaceSlice []interface{}
 
-func (x InterfaceSlice) AsInt() (res IntSlice) {
+func (x InterfaceSlice) ToInt() (res IntSlice) {
 	res = IntSlice{}
 	for _, v := range x {
 		res = append(res, v.(int))
@@ -11,7 +11,7 @@ func (x InterfaceSlice) AsInt() (res IntSlice) {
 	return
 }
 
-func (x InterfaceSlice) AsString() (res StringSlice) {
+func (x InterfaceSlice) ToString() (res StringSlice) {
 	res = StringSlice{}
 	for _, v := range x {
 		res = append(res, v.(string))
@@ -19,12 +19,10 @@ func (x InterfaceSlice) AsString() (res StringSlice) {
 	return
 }
 
-func (x InterfaceSlice) AsInt64() (res Int64Slice) {
+func (x InterfaceSlice) ToInt64() (res Int64Slice) {
 	res = Int64Slice{}
 	for _, v := range x {
 		res = append(res, v.(int64))
 	}
 	return
 }
-
-
