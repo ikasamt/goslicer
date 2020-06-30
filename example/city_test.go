@@ -190,32 +190,32 @@ func init(){
 func TestCity(t *testing.T) {
 	// total
 	log.Println("total count: ",  cities.Count())
-	log.Println("total population: ",  cities.Select(`Population`).AsInt().Sum())
-	log.Println("max population: ",  cities.Select(`Population`).AsInt().Max())
+	log.Println("total population: ",  cities.Select(`Population`).ToInt().Sum())
+	log.Println("max population: ",  cities.Select(`Population`).ToInt().Max())
 	log.Println("sort desc population: ",  cities.SortBy(func(a City,b City)bool{return a.Population > b.Population})[0])
 	log.Println("sort asc population: ",  cities.SortBy(func(a City,b City)bool{return a.Population < b.Population})[0])
 
 	// Where
 	capitals := cities.Where(func(x City)bool{return x.IsCapital})
 	log.Println("total count: ",  capitals.Count())
-	log.Println("total population: ",  capitals.Select(`Population`).AsInt().Sum())
-	log.Println("max population: ",  capitals.Select(`Population`).AsInt().Max())
+	log.Println("total population: ",  capitals.Select(`Population`).ToInt().Sum())
+	log.Println("max population: ",  capitals.Select(`Population`).ToInt().Max())
 	log.Println("sort desc population: ",  capitals.SortBy(func(a City,b City)bool{return a.Population > b.Population})[0])
 	log.Println("sort asc population: ",  capitals.SortBy(func(a City,b City)bool{return a.Population < b.Population})[0])
 
 	// Under 1,000,000 - over 500,000
 	under1M := cities.Where(func(x City)bool{return 50*10000 < x.Population && x.Population < 100*10000})
 	log.Println("total count: ",  under1M.Count())
-	log.Println("total population: ",  under1M.Select(`Population`).AsInt().Sum())
-	log.Println("max population: ",  under1M.Select(`Population`).AsInt().Min())
-	log.Println("max population: ",  under1M.Select(`Population`).AsInt().Max())
+	log.Println("total population: ",  under1M.Select(`Population`).ToInt().Sum())
+	log.Println("max population: ",  under1M.Select(`Population`).ToInt().Min())
+	log.Println("max population: ",  under1M.Select(`Population`).ToInt().Max())
 	log.Println("sort desc population: ",  under1M.SortBy(func(a City,b City)bool{return a.Population > b.Population})[0])
 	log.Println("sort asc population: ",  under1M.SortBy(func(a City,b City)bool{return a.Population < b.Population})[0])
 
 	// 北海道
 	hokkaido := cities.Where(func(x City)bool{return x.PrefectureName== `北海道`})
 	log.Println("total count: ",  hokkaido.Count())
-	log.Println("total population: ",  hokkaido.Select(`Population`).AsInt().Sum())
+	log.Println("total population: ",  hokkaido.Select(`Population`).ToInt().Sum())
 	log.Println("sort desc population: ",  hokkaido.SortBy(func(a City,b City)bool{return a.Population > b.Population})[0])
 	log.Println("sort asc population: ",  hokkaido.SortBy(func(a City,b City)bool{return a.Population < b.Population})[0])
 

@@ -27,9 +27,9 @@ func TestUser(t *testing.T) {
 	log.Println(senior.Age)
 
 	teenFirstNames := teens.Select(`FirstName`)
-	log.Println(teenFirstNames.AsString())
+	log.Println(teenFirstNames.ToString())
 
 	teenFirstIDs := teens.Select(`ID`)
-	log.Println(teenFirstIDs.AsInt())
+	log.Println(teenFirstIDs.ToInt())
 }
 

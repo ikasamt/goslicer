@@ -19,7 +19,7 @@ type TimeStamps struct {
 	UpdatedAt time.Time
 }
 
-// +jam /clefs/slicer/struct.go
+// +jam ./clefs/slicer.go
 type User struct {
 	ID        int
 	Age       int
@@ -29,7 +29,7 @@ type User struct {
 	TimeStamps
 }
 
-// +jam /clefs/slicer/struct.go
+// +jam ./clefs/slicer.go
 type City struct {
 	PrefectureName string
 	Name           string
